@@ -1,21 +1,7 @@
-const pj = document.getElementById('pj');
-
-var intTop = 0;
-var intLeft = 0;
-const pxMov = 1;
-var mov = 32;
-
-var width = document.body.offsetWidth;
-var body = document.body,  html = document.documentElement;
-var height = Math.max( body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight );
-
-
-setInterval(function () { Mover(); }, 1);
-
-
-//document.addEventListener("keydown", logKey, false);
+const pj=document.getElementById('pj'),pxMov=1;
+var intTop=0,intLeft=0,mov=32,width=document.body.offsetWidth,body=document.body,html=document.documentElement,height=Math.max(body.scrollHeight,body.offsetHeight,html.clientHeight,html.scrollHeight,html.offsetHeight);
+setInterval(function(){Mover();},1);
 document.addEventListener("keypress", logKey, false);
-//document.addEventListener("keyup", logKey, false);
 
 function logKey(event) {
     var key = event.keyCode;
