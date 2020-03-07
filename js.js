@@ -1,50 +1,37 @@
-const pj=document.getElementById('pj'),px=1;
-var tp=0,lf=0,key=32,width=document.body.offsetWidth,body=document.body,html=document.documentElement,height=Math.max(body.scrollHeight,body.offsetHeight,html.clientHeight,html.scrollHeight,html.offsetHeight);
-setInterval(function(){Mover();},1);
+const o=document.getElementById('o'),px=1,time=1;
+var tp=0,lf=0,key=32,w=119,s=115,d=100,a=97,space=32,width=document.body.offsetWidth,body=document.body,html=document.documentElement,height=Math.max(body.scrollHeight,body.offsetHeight,html.clientHeight,html.scrollHeight,html.offsetHeight);
+setInterval(function(){Mover();},time);
 document.addEventListener("keypress", logKey, false);
-
-function logKey(event) {
-    key = event.keyCode;
-    if(key == 115 || key == 119 || key == 100 || key == 97  || key == 32) {
+function logKey(e) {
+    key=e.keyCode;
+    if(key==w || key==s || key==d || key==a || key==space)
         Mover();
-    }
 }
 
 function Mover()
 {
-    if((height - 10) >=  tp && tp > 0){
-        if(key == 115) {
-            tp += px;
-        }
-        else if(key == 119) {
-            tp -= px;
-        } 
+    if((height-10)>=tp && tp>0){
+        if(key==s)
+            tp+=px;
+        else if(key==w)
+            tp-=px;
     }
-    else if(tp == 0 && key == 115) {
-        tp += px;
-    }
-    else if((height - 10) <=  tp && key == 119){
-        tp -= px;
-    }
+    else if(tp==0 && key==s)
+        tp+=px;
+    else if((height-10)<=tp && key==w)
+        tp-=px;
 
-
-
-
-    if((width - 10) >=  lf && lf > 0){
-        if(key == 100) {
-            lf += px;
-        }
-        else if(key == 97) {
-            lf -= px;
-        }
+    if((width-10)>=lf && lf>0){
+        if(key==d)
+            lf+=px;
+        else if(key==a)
+            lf-=px;
     }
-    else if(lf == 0 && key == 100){
-        lf += px;
-    }
-    else if((width - 10) <=  lf && key == 97) {
-        lf -= px;
-    }
+    else if(lf==0 && key==d)
+        lf+=px;
+    else if((width-10)<=lf && key==a) 
+        lf-=px;
 
-    pj.style.top = tp + 'px';
-    pj.style.left = lf + 'px';
+    o.style.top=tp+'px';
+    o.style.left=lf+'px';
 }
