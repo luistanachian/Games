@@ -4,8 +4,7 @@ setInterval(function(){Mover();},time);
 document.addEventListener("keypress", logKey, false);
 function logKey(e) {
     key=e.keyCode;
-    if(key==w || key==s || key==d || key==a || key==space)
-        Mover();
+    if(key==w || key==s || key==d || key==a || key==space) Mover();
 }
 
 function Mover()
