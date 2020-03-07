@@ -8,6 +8,7 @@ function logKey(event) {
     if(key == 115 || key == 119 || key == 100 || key == 97  || key == 32) {
         mov = key;
         Mover();
+        
     }
 }
 
